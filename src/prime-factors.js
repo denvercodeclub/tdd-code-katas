@@ -1,10 +1,10 @@
 module.exports = function primeFactors(number) {
   if (isNaN(number)) {
-    throw new TypeError('Only parameters of type "number" allowed');
+    throw new TypeError('Invalid parameter: Only parameters of type "number" allowed');
   }
 
   if (number % 1 !== 0 || number < 0) {
-    throw new Error('Only positive integers allowed');
+    throw new Error('Invalid parameter: Only positive integers allowed');
   }
 
   var primes = [];
