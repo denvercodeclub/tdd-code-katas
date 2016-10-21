@@ -133,7 +133,20 @@ Write a function that will convert a positive integer between 1 and 4999 into ro
 
 ### Exercise 5 - Bowling Game
 
-Write a function that will reproduce a scoring system for a game of bowling.
+Write a class that will reproduce a scoring system for a game of bowling. Make two methods:
+ 
+- `roll(pins: int)` - called each time a player rolls the ball. The argument is the number of pins knocked down
+- `score()` - called only at the very end of the game and returns an integer of the total score for that game
+
+Ex: 
+```
+Bowling.roll(3);
+Bowling.roll(5);
+Bowling.roll(10);
+... 
+Bowling.score();
+
+```
 
 #### Reference
 
@@ -148,12 +161,14 @@ Scoring caveats:
 - _Spares_: A spare occurs when a player fails to knock down all of the pins in the first frame, but succeeds in 
 knocking down the remainder in the second frame. The points of that player's next roll are counted and then also added 
 onto the score of the frame where the spare occurred. 
--- Ex: Frame 3, roll 1: 8 points. Frame 3, roll 2: 2 points (spare!). Frame 4, roll 1: 8 points, Frame 4, roll 2: 1 point. 
+    - Ex: Frame 3, roll 1: 8 points. Frame 3, roll 2: 2 points (spare!). Frame 4, roll 1: 8 points, Frame 4, roll 2: 1 point. 
 Score for those two frames would be `(10 + 8) + 8 + 1 = 27`.
 - _Strikes_: A strike happens when a player knocks down all 10 pins in the first (and only) roll of a frame. The next *two* 
 rolls are added to the score of the frame where the strike occurred.
--- Ex: Frame 3, roll 1: 10 points (strike! no second roll). Frame 4, roll 1: 8 points. Frame 4 roll 2: 1 point. Score for those two 
+    - Ex: Frame 3, roll 1: 10 points (strike! no second roll). Frame 4, roll 1: 8 points. Frame 4 roll 2: 1 point. Score for those two 
 frames would be `(10 + 8 + 1) + 8 + 1 = 28`.
+- In the 10th frame, a player who rolls a spare or a strike may roll the ball extra times to complete the frame, though
+no more than rolls can occur.
 
 
 ### Exercise 6 - String Calculator
